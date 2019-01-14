@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import data from './dummy-data';
-import Search from './components/Search/Search';
+import Search from './components/Search/SearchContainer';
 import PostContainer from './components/Post/PostContainer';
 
 class App extends Component {

@@ -1,0 +1,7 @@
+.topBar {
+	display: flex;
+	justify-content: space-around;
+}
+.menu {
+	font-size: 1.7rem;
+}

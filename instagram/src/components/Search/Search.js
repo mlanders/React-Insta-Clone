@@ -1,7 +1,11 @@
 import React from 'react';
 
 function Search(props) {
-	return <h1>Search</h1>;
+	return (
+		<div className="Search">
+			<input type="search" id="name" name="name" placeholder="Search" />
+		</div>
+	);
 }
 
 export default Search;
