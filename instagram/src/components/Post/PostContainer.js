@@ -14,7 +14,7 @@ function PostContainer(props) {
 	);
 }
 
-PostContainer.PropTypes = {
+PostContainer.propTypes = {
 	data: PropTypes.arrayOf(
 		PropTypes.shape({
 			username: PropTypes.string,
@@ -22,10 +22,12 @@ PostContainer.PropTypes = {
 			imageUrl: PropTypes.string,
 			likes: PropTypes.number,
 			timestamp: PropTypes.string,
-			comments: PropTypes.shape({
-				username: PropTypes.string,
-				text: PropTypes.string
-			})
+			comments: PropTypes.arrayOf(
+				PropTypes.shape({
+					username: PropTypes.string,
+					text: PropTypes.string
+				})
+			)
 		})
 	)
 };

@@ -1,7 +1,11 @@
 .topBar {
 	display: flex;
 	justify-content: space-around;
+	margin: 10px 0 30px;
 }
 .menu {
 	font-size: 1.7rem;
+}
+.Search input {
+	max-width: 400px;
 }

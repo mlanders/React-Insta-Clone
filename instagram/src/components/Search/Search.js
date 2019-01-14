@@ -3,7 +3,12 @@ import React from 'react';
 function Search(props) {
 	return (
 		<div className="Search">
-			<input type="search" id="name" name="name" placeholder="Search" />
+			<input
+				type="text"
+				class="form-control"
+				placeholder="Search"
+				aria-label="Search"
+			/>
 		</div>
 	);
 }

@@ -1,3 +1,22 @@
+.Menu i {
+	margin: 0 5px;
+}
+.card-title {
+	font-weight: bold;
+}
+.card {
+	margin-bottom: 25px;
+}
+.card input {
+	border: none;
+	width: 95%;
+	margin: 0 auto 5px;
+}
+.card img {
+	width: 100%;
+	height: auto;
+	margin-bottom: 10px;
+}
 .postContainer {
 	display: flex;
 	flex-direction: column;
@@ -6,6 +25,8 @@
 }
 .postHeader {
 	display: flex;
+	padding: 5px;
+	align-items: center;
 }
 
 .postHeader img {
@@ -13,4 +34,33 @@
 	height: 40px;
 	border-radius: 50%;
 	margin-right: 10px;
+}
+
+.icons i {
+	margin-right: 10px;
+	font-size: 20px;
+	padding: 5px;
+}
+.likes {
+	padding: 5px;
+	font-weight: bold;
+}
+
+/* Comments */
+.comments {
+	display: flex;
+	justify-content: flexstart;
+	align-items: flexstart;
+	flex-direction: column;
+	padding: 5px;
+}
+
+.commentName {
+	font-weight: bold;
+}
+.commentText {
+	font-weight: normal;
+}
+.time {
+	padding: 5px;
 }

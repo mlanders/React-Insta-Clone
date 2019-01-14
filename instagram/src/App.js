@@ -8,7 +8,6 @@ class App extends Component {
 	constructor() {
 		super();
 		this.state = { data: data };
-		console.log(data);
 	}
 	render() {
 		return (
