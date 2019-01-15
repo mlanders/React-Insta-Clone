@@ -4,7 +4,7 @@ function Search(props) {
 	return (
 		<div className="Search">
 			<input
-				type="submit"
+				type="text"
 				className="form-control"
 				placeholder="Search"
 				aria-label="Search"
