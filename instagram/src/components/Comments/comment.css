@@ -1,0 +1,19 @@
+.comments {
+	display: flex;
+	justify-content: flexstart;
+	align-items: flexstart;
+	flex-direction: column;
+	padding: 5px;
+}
+
+.commentName {
+	font-weight: bold;
+}
+.commentText {
+	font-weight: normal;
+}
+.time {
+	font-size: 12px;
+	font-weight: 400;
+	color: rgb(155, 155, 155);
+}

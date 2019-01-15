@@ -3,12 +3,17 @@ import React from 'react';
 function Search(props) {
 	return (
 		<div className="Search">
-			<input
-				type="text"
-				className="form-control"
-				placeholder="Search"
-				aria-label="Search"
-			/>
+			<form onSubmit={props.searchPosts}>
+				<input
+					type="text"
+					name="searchText"
+					value={props.searchText}
+					className="form-control"
+					placeholder="Search"
+					aria-label="Search"
+					onChange={props.handleChange}
+				/>
+			</form>
 		</div>
 	);
 }

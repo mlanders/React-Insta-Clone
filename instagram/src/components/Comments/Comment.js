@@ -1,4 +1,6 @@
 import React from 'react';
+import moment from 'moment';
+
 import PropTypes from 'prop-types';
 
 function Comment(props) {
@@ -7,6 +9,12 @@ function Comment(props) {
 			<p className="commentName">
 				{props.comment.username}:{' '}
 				<span className="commentText">{props.comment.text}</span>
+				<span className="time">
+					{' '}
+					{moment()
+						.startOf('day')
+						.fromNow()}
+				</span>
 			</p>
 		</div>
 	);
@@ -15,8 +23,8 @@ function Comment(props) {
 Comment.propTypes = {
 	comments: PropTypes.shape({
 		username: PropTypes.string,
-		text: PropTypes.string
-	})
+		text: PropTypes.string,
+	}),
 };
 
 export default Comment;

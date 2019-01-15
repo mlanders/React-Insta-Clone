@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import moment from 'moment';
 import Comment from './Comment';
-// import data from '../../dummy-data';
-
+import './comment.css';
 class CommentContainer extends Component {
 	constructor(props) {
 		super(props);
@@ -19,7 +17,7 @@ class CommentContainer extends Component {
 	};
 	submitComment = e => {
 		e.preventDefault();
-		console.log(this.state.comment);
+		// console.log(this.state.comment);
 		this.setState({
 			comments: [
 				...this.state.comments,
@@ -33,7 +31,7 @@ class CommentContainer extends Component {
 	};
 
 	render() {
-		console.log('commentContainer:', this.state.comments);
+		// console.log('commentContainer:', this.state.comments);
 		return (
 			<div className="commentContainer">
 				<div className="comments">
@@ -41,16 +39,12 @@ class CommentContainer extends Component {
 						return <Comment key={index} comment={comment} />;
 					})}
 				</div>
-				<p className="time">
-					{moment()
-						.startOf('hour')
-						.fromNow()}
-				</p>
+
 				<form onSubmit={this.submitComment}>
 					<input
 						type="text"
 						name="comment"
-						value={this.comment}
+						value={this.state.comment}
 						onChange={this.handleChange}
 						placeholder="Add a comment"
 					/>
