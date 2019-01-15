@@ -8,7 +8,15 @@ function PostContainer(props) {
 	return (
 		<div className="postContainer">
 			{props.data.map(post => {
-				return <Post key={post.timestamp} post={post} />;
+				return (
+					<Post
+						key={post.timestamp}
+						post={post}
+						handleChange={props.handleChange}
+						submitComment={props.submitComment}
+						commentItem={props.commentItem}
+					/>
+				);
 			})}
 		</div>
 	);

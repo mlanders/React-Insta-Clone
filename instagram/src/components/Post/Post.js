@@ -27,7 +27,16 @@ function Post(props) {
 					.startOf('hour')
 					.fromNow()}
 			</p>
-			<input type="text" placeholder="Add a comment" />
+			<form>
+				<input
+					type="text"
+					name="comment"
+					value={props.commentItem}
+					onChange={props.handleChange}
+					onSubmit={props.submitComment}
+					placeholder="Add a comment"
+				/>
+			</form>
 		</Card>
 	);
 }

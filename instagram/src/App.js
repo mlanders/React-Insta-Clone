@@ -7,18 +7,43 @@ import PostContainer from './components/Post/PostContainer';
 class App extends Component {
 	constructor() {
 		super();
-		this.state = { data: data };
+		this.state = {
+			data: data,
+			comment: ''
+		};
 	}
+	handleChange = e => {
+		this.setState({
+			[e.target.name]: e.target.value
+		});
+	};
+	// submitComment = e => {
+	// 	e.preventDefault();
+	// 	this.setState({
+	// 		data: [
+	// 			...this.state.data,
+	// 			{
+	// 				comments: [
+	// 					{
+	// 						username: 'Mike',
+	// 						text:this.state.comment
+	// 					}
+	// 				]
+	// 			],
+	// 		comment: ''
+	// 	});
+	// };
+
 	render() {
 		return (
-			//import dummy data into state
-			//import Search.js
-			//import PostContainer.js
-
-			//pass dummy data via props down to both PostContainer and Comment Container
 			<div className="App">
 				<Search />
-				<PostContainer data={this.state.data} />
+				<PostContainer
+					data={this.state.data}
+					submitComment={this.submitComment}
+					handleChange={this.handleChange}
+					commentItem={this.commentItem}
+				/>
 			</div>
 		);
 	}
