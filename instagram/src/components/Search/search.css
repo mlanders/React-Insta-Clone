@@ -1,11 +1,22 @@
 .topBar {
 	display: flex;
-	justify-content: space-around;
-	margin: 10px 0 30px;
+	justify-content: space-between;
+	margin: 10px auto 30px;
+	border-bottom: 1px solid rgb(209, 209, 209);
+	max-width: 700px;
+	padding-bottom: 15px;
 }
-.menu {
-	font-size: 1.7rem;
-}
+
 .Search input {
 	max-width: 400px;
+}
+
+.Logo {
+	font-size: 25px;
+}
+
+.fa-instagram {
+	border-right: 1px solid gray;
+	padding-right: 5px;
+	font-size: 30px;
 }
