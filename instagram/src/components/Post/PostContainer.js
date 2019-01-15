@@ -8,15 +8,7 @@ function PostContainer(props) {
 	return (
 		<div className="postContainer">
 			{props.data.map(post => {
-				return (
-					<Post
-						key={post.timestamp}
-						post={post}
-						handleChange={props.handleChange}
-						submitComment={props.submitComment}
-						commentItem={props.commentItem}
-					/>
-				);
+				return <Post key={post.timestamp} post={post} />;
 			})}
 		</div>
 	);
@@ -33,11 +25,11 @@ PostContainer.propTypes = {
 			comments: PropTypes.arrayOf(
 				PropTypes.shape({
 					username: PropTypes.string,
-					text: PropTypes.string
+					text: PropTypes.string,
 				})
-			)
+			),
 		})
-	)
+	),
 };
 
 export default PostContainer;

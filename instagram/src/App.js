@@ -7,43 +7,24 @@ import PostContainer from './components/Post/PostContainer';
 class App extends Component {
 	constructor() {
 		super();
+		console.log('constructor running');
 		this.state = {
-			data: data,
-			comment: ''
+			data: [],
 		};
 	}
-	handleChange = e => {
+	componentDidMount() {
+		console.log('CDM running');
 		this.setState({
-			[e.target.name]: e.target.value
+			data: data,
 		});
-	};
-	// submitComment = e => {
-	// 	e.preventDefault();
-	// 	this.setState({
-	// 		data: [
-	// 			...this.state.data,
-	// 			{
-	// 				comments: [
-	// 					{
-	// 						username: 'Mike',
-	// 						text:this.state.comment
-	// 					}
-	// 				]
-	// 			],
-	// 		comment: ''
-	// 	});
-	// };
-
+	}
 	render() {
+		console.log('render running');
+		console.log(this.state.data);
 		return (
 			<div className="App">
 				<Search />
-				<PostContainer
-					data={this.state.data}
-					submitComment={this.submitComment}
-					handleChange={this.handleChange}
-					commentItem={this.commentItem}
-				/>
+				<PostContainer data={this.state.data} />
 			</div>
 		);
 	}

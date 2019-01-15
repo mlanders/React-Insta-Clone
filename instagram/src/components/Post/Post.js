@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import moment from 'moment';
 import { Card, CardTitle } from 'reactstrap';
-import Comment from '../Comments/Comment';
+import CommentContainer from '../Comments/CommentContainer';
 
 function Post(props) {
 	return (
@@ -17,26 +16,8 @@ function Post(props) {
 				<i className="far fa-comment" />
 			</div>
 			<p className="likes">{props.post.likes} likes</p>
-			<div className="comments">
-				{props.post.comments.map((comment, index) => {
-					return <Comment key={index} comment={comment} />;
-				})}
-			</div>
-			<p className="time">
-				{moment()
-					.startOf('hour')
-					.fromNow()}
-			</p>
-			<form>
-				<input
-					type="text"
-					name="comment"
-					value={props.commentItem}
-					onChange={props.handleChange}
-					onSubmit={props.submitComment}
-					placeholder="Add a comment"
-				/>
-			</form>
+
+			<CommentContainer post={props.post} />
 		</Card>
 	);
 }
@@ -51,10 +32,10 @@ Post.propTypes = {
 		comments: PropTypes.arrayOf(
 			PropTypes.shape({
 				username: PropTypes.string,
-				text: PropTypes.string
+				text: PropTypes.string,
 			})
-		)
-	})
+		),
+	}),
 };
 
 export default Post;
