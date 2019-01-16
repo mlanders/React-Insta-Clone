@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function Search(props) {
 	return (
 		<div className="Search">
-			<form onSubmit={props.searchPosts}>
+			<form>
 				<input
 					type="text"
 					name="searchText"
@@ -17,5 +18,10 @@ function Search(props) {
 		</div>
 	);
 }
+
+Search.propTypes = {
+	handleChange: PropTypes.function,
+	searchText: PropTypes.function,
+};
 
 export default Search;

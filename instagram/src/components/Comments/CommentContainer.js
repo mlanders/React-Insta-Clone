@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Comment from './Comment';
+import PropTypes from 'prop-types';
+
 import './comment.css';
 class CommentContainer extends Component {
 	constructor(props) {
@@ -53,5 +55,23 @@ class CommentContainer extends Component {
 		);
 	}
 }
+
+CommentContainer.propTypes = {
+	data: PropTypes.arrayOf(
+		PropTypes.shape({
+			username: PropTypes.string,
+			thumbnailUrl: PropTypes.string,
+			imageUrl: PropTypes.string,
+			likes: PropTypes.number,
+			timestamp: PropTypes.string,
+			comments: PropTypes.arrayOf(
+				PropTypes.shape({
+					username: PropTypes.string,
+					text: PropTypes.string,
+				})
+			),
+		})
+	),
+};
 
 export default CommentContainer;

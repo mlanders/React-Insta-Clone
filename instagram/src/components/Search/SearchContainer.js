@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import Logo from './Logo';
 import Search from './Search';
 import Menu from './Menu';
@@ -9,7 +11,7 @@ class SearchContainer extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			data: props.data,
+			data: this.props.data,
 			searchText: '',
 		};
 	}
@@ -26,17 +28,16 @@ class SearchContainer extends Component {
 	searchPosts = () => {
 		if (this.state.searchText.length > 0) {
 			this.state.data.filter(post => {
-				const values = Object.values(post);
-				const string = JSON.stringify(values);
 				return (
-					this.state.searchText ===
-					string.includes(this.state.searchText)
+					post.username.toLowerCase() ===
+					this.state.searchText.toLowerCase()
 				);
 			});
 		}
 	};
 
 	render() {
+		console.log('search container');
 		console.log(this.state.data);
 		return (
 			<div className="topBar">
@@ -50,5 +51,9 @@ class SearchContainer extends Component {
 		);
 	}
 }
+
+SearchContainer.propTypes = {
+	data: PropTypes.array,
+};
 
 export default SearchContainer;

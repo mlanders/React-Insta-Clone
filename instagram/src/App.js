@@ -21,8 +21,8 @@ class App extends Component {
 	};
 
 	render() {
-		// console.log('render running');
-		// console.log(this.state.data);
+		console.log('render running');
+		console.log(this.state.data);
 		return (
 			<div className="App">
 				<SearchContainer data={this.state.data} />
