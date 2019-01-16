@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 function Search(props) {
 	return (
@@ -19,9 +19,9 @@ function Search(props) {
 	);
 }
 
-Search.propTypes = {
-	handleChange: PropTypes.function,
-	searchText: PropTypes.function,
-};
+// Search.propTypes = {
+// 	handleChange: PropTypes.function,
+// 	searchText: PropTypes.function,
+// };
 
 export default Search;

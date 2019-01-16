@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 import Logo from './Logo';
 import Search from './Search';
@@ -11,7 +11,7 @@ class SearchContainer extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			data: this.props.data,
+			data: props.data,
 			searchText: '',
 		};
 	}
@@ -26,15 +26,11 @@ class SearchContainer extends Component {
 	};
 
 	searchPosts = () => {
-		if (this.state.searchText.length > 0) {
-			this.state.data.filter(post => {
-				return (
-					post.username.toLowerCase() ===
-					this.state.searchText.toLowerCase()
-				);
-			});
+		// if (this.state.searchText.length > 0) {
+			let filteredPosts = this.state.data;
+			filteredPosts = filteredPosts.filter(item =>{
+				return item.username.toLowerCase().includes(this.searchText.toLowerCase()) ? this.setState({data:filteredPosts}) : null})
 		}
-	};
 
 	render() {
 		console.log('search container');
@@ -52,8 +48,8 @@ class SearchContainer extends Component {
 	}
 }
 
-SearchContainer.propTypes = {
-	data: PropTypes.array,
-};
+// SearchContainer.propTypes = {
+// 	data: PropTypes.array,
+// };
 
 export default SearchContainer;
