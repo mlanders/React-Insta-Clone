@@ -1,27 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Logo from './Logo';
+import Menu from './Menu';
+import './search.css';
 
 function Search(props) {
 	return (
-		<div className="Search">
-			<form>
+		<div className="topBar">
+			<Logo />
+			<form onChange={props.handleChange} onSubmit={props.searchPosts}>
 				<input
 					type="text"
 					name="searchText"
 					value={props.searchText}
 					className="form-control"
 					placeholder="Search"
-					aria-label="Search"
-					onChange={props.handleChange}
 				/>
 			</form>
+			<Menu />
 		</div>
 	);
 }
 
 Search.propTypes = {
-	handleChange: PropTypes.function,
-	searchText: PropTypes.function,
+	handleChange: PropTypes.func,
+	searchText: PropTypes.func,
 };
 
 export default Search;
