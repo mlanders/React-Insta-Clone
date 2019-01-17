@@ -19,6 +19,18 @@ const SearchForm = styled.form`
 	width: 40%;
 	display: flex;
 `;
+const Clear = styled.i`
+	position: relative;
+	top: 10px;
+	right: 25px;
+	color: gray;
+	cursor: pointer;
+	display: ${props => (props.display ? 'Display' : 'none')};
+`;
+
+const Display = styled(Clear)`
+	display: block;
+`;
 
 function Search(props) {
 	return (
@@ -33,6 +45,11 @@ function Search(props) {
 					value={props.searchText}
 					className="form-control"
 					placeholder="Search"
+				/>
+				<Clear
+					display={props.display ? Display : null}
+					className="far fa-times-circle"
+					onClick={props.clearSearch}
 				/>
 			</SearchForm>
 			<Menu />

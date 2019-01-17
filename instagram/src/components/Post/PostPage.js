@@ -10,16 +10,18 @@ class PostPage extends React.Component {
 			data: [],
 			filtered: [],
 			searchText: '',
+			Display: false,
 		};
 	}
 
 	handleChange = e => {
-		this.setState(
-			{
-				[e.target.name]: e.target.value,
-			}
-			// () => this.searchPosts()
-		);
+		console.log(e.target.value);
+		if (e.target.name === 'searchText') {
+			this.setState({ Display: true });
+		}
+		this.setState({
+			[e.target.name]: e.target.value,
+		});
 	};
 
 	searchPosts = e => {
@@ -30,6 +32,16 @@ class PostPage extends React.Component {
 			return post.username.toLowerCase().includes(this.state.searchText);
 		});
 		this.setState({ filtered: newPosts });
+	};
+
+	clearSearch = e => {
+		this.setState(
+			{
+				searchText: '',
+				filtered: [],
+			},
+			window.location.reload()
+		);
 	};
 
 	componentDidMount = () => {
@@ -45,6 +57,8 @@ class PostPage extends React.Component {
 				<Search
 					handleChange={this.handleChange}
 					searchPosts={this.searchPosts}
+					clearSearch={this.clearSearch}
+					display={this.state.Display}
 				/>
 				<PostContainer
 					data={
