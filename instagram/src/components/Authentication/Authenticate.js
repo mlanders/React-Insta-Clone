@@ -9,6 +9,6 @@ const Authenticate = Login => PostPage => props => {
 	if (props.username === username && props.password === password) {
 		return <PostPage />;
 	}
-	return <Login />;
+	return <Login updateLocalStorage={props.updateLocalStorage} />;
 };
 export default Authenticate;
