@@ -49,7 +49,7 @@ class CommentContainer extends Component {
 						value={this.state.comment}
 						onChange={this.handleChange}
 						placeholder="Add a comment"
-					/>
+					/><p>&#8230;</p>
 				</form>
 			</div>
 		);
