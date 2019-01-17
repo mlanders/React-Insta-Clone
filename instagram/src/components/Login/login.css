@@ -1,9 +1,23 @@
+body {
+	background: transparent;
+}
+#root {
+	background-color: rgb(236, 236, 236);
+}
+.loginContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 300px;
+	margin: 25% auto;
+}
 .login {
 	display: flex;
 	flex-direction: column;
 }
 .loginModal {
-	width: 300px;
-	margin: 25% auto;
+	/* width: 300px; */
+	/* margin: 25% auto; */
 	padding: 20px;
 }

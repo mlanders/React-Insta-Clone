@@ -1,7 +1,6 @@
 import React from 'react';
 import './login.css';
-import Authenticate from '../Authentication/Authenticate';
-import { Card, CardTitle } from 'reactstrap';
+import { Card } from 'reactstrap';
 
 class Login extends React.Component {
 	constructor() {
@@ -46,25 +45,28 @@ class Login extends React.Component {
 
 	render() {
 		return (
-			<Card className="loginModal">
-				<form className="login">
-					<input
-						type="text"
-						placeholder="username"
-						name="username"
-						value={this.state.username}
-						onChange={this.handleChange}
-					/>
-					<input
-						type="text"
-						placeholder="password"
-						name="password"
-						value={this.state.password}
-						onChange={this.handleChange}
-					/>
-					<button onClick={this.handleSubmit}>Login</button>
-				</form>
-			</Card>
+			<div className="loginContainer">
+				<h1>Instagram</h1>
+				<Card className="loginModal">
+					<form className="login">
+						<input
+							type="text"
+							placeholder="username"
+							name="username"
+							value={this.state.username}
+							onChange={this.handleChange}
+						/>
+						<input
+							type="text"
+							placeholder="password"
+							name="password"
+							value={this.state.password}
+							onChange={this.handleChange}
+						/>
+						<button onClick={this.handleSubmit}>Login</button>
+					</form>
+				</Card>
+			</div>
 		);
 	}
 }
