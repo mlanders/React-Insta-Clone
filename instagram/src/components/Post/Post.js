@@ -13,6 +13,7 @@ class Post extends Component {
 		};
 	}
 
+
 	handleLike = () => {
 		if (this.state.liked === false) {
 			this.setState({ likes: this.state.likes + 1, liked: true });

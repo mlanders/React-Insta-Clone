@@ -9,13 +9,21 @@ class CommentContainer extends Component {
 		this.state = {
 			comments: props.post.comments,
 			comment: '',
+			user: ''
 		};
 	}
+
+	loadStorage = () => {
+		let username = localStorage.getItem('username');
+		username = JSON.parse(username) || [];
+		console.log(username)
+		this.setState({ user: username });
+	};
 
 	handleChange = e => {
 		this.setState({
 			[e.target.name]: e.target.value,
-		});
+		}, () => this.loadStorage());
 	};
 	submitComment = e => {
 		e.preventDefault();
@@ -24,7 +32,7 @@ class CommentContainer extends Component {
 			comments: [
 				...this.state.comments,
 				{
-					username: 'Mike',
+					username: this.state.user,
 					text: this.state.comment,
 				},
 			],
