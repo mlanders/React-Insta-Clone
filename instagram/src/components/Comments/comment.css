@@ -1,4 +1,4 @@
-.comments {
+/* .comments {
 	display: flex;
 	justify-content: flexstart;
 	align-items: flexstart;
@@ -8,34 +8,34 @@
 
 .commentName {
 	font-weight: bold;
-}
-.commentText {
+} */
+/* .commentText {
 	font-weight: normal;
-}
-.time {
+} */
+/* .time {
 	font-size: 12px;
 	font-weight: 400;
 	color: rgb(155, 155, 155);
-}
-
-.commentContainer form{
+} */
+/* 
+.commentContainer form {
 	border-top: 1px solid rgb(228, 228, 228);
 	display: flex;
 }
 
-.commentContainer form input{
+.commentContainer form input {
 	padding: 5px;
 	width: 75%;
-}
-.commentContainer form input:focus{
-	outline: none
-}
+} */
+/* .commentContainer form input:focus {
+	outline: none;
+} */
 
-.commentContainer form p{
+/* .commentContainer form p {
 	font-size: 46px;
 	height: 30px;
 	position: relative;
 	top: -28px;
 	right: 5px;
 	cursor: pointer;
-}
+} */

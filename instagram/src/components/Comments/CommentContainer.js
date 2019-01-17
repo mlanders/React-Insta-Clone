@@ -1,30 +1,56 @@
 import React, { Component } from 'react';
 import Comment from './Comment';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+// import './comment.css';
 
-import './comment.css';
+const CommentForm = styled.form`
+	border-top: 1px solid rgb(228, 228, 228);
+	display: flex;
+`;
+const CommentInput = styled.input`
+	padding: 5px;
+	width: 100%;
+	border: none;
+
+	&:focus {
+		outline: none;
+	}
+`;
+const Elipsis = styled.p`
+	font-size: 46px;
+	height: 30px;
+	position: relative;
+	top: -28px;
+	right: 5px;
+	cursor: pointer;
+`;
 class CommentContainer extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			comments: props.post.comments,
 			comment: '',
-			user: ''
+			user: '',
 		};
 	}
 
 	loadStorage = () => {
 		let username = localStorage.getItem('username');
 		username = JSON.parse(username) || [];
-		console.log(username)
+		console.log(username);
 		this.setState({ user: username });
 	};
 
 	handleChange = e => {
-		this.setState({
-			[e.target.name]: e.target.value,
-		}, () => this.loadStorage());
+		this.setState(
+			{
+				[e.target.name]: e.target.value,
+			},
+			() => this.loadStorage()
+		);
 	};
+
 	submitComment = e => {
 		e.preventDefault();
 		// console.log(this.state.comment);
@@ -43,22 +69,21 @@ class CommentContainer extends Component {
 	render() {
 		// console.log('commentContainer:', this.state.comments);
 		return (
-			<div className="commentContainer">
-				<div className="comments">
-					{this.state.comments.map((comment, index) => {
-						return <Comment key={index} comment={comment} />;
-					})}
-				</div>
+			<div>
+				{this.state.comments.map((comment, index) => {
+					return <Comment key={index} comment={comment} />;
+				})}
 
-				<form onSubmit={this.submitComment}>
-					<input
+				<CommentForm onSubmit={this.submitComment}>
+					<CommentInput
 						type="text"
 						name="comment"
 						value={this.state.comment}
 						onChange={this.handleChange}
 						placeholder="Add a comment"
-					/><p>&#8230;</p>
-				</form>
+					/>
+					<Elipsis>&#8230;</Elipsis>
+				</CommentForm>
 			</div>
 		);
 	}

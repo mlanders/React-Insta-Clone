@@ -12,6 +12,7 @@ class PostPage extends React.Component {
 			searchText: '',
 		};
 	}
+
 	handleChange = e => {
 		this.setState(
 			{
@@ -38,9 +39,9 @@ class PostPage extends React.Component {
 		});
 	};
 	render() {
-		console.log('render running');
+		// console.log('render running');
 		return (
-			<div className="App">
+			<React.Fragment>
 				<Search
 					handleChange={this.handleChange}
 					searchPosts={this.searchPosts}
@@ -53,7 +54,7 @@ class PostPage extends React.Component {
 					}
 					handleLike={this.handleLike}
 				/>
-			</div>
+			</React.Fragment>
 		);
 	}
 }

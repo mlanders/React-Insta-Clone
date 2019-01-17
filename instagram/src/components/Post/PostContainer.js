@@ -1,12 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Post from './Post';
+import styled from 'styled-components';
 
-import './post.css';
+// import './post.css';
+
+const PostsContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	width: 500px;
+	margin: 0 auto;
+`;
 
 function PostContainer(props) {
 	return (
-		<div className="postContainer">
+		<PostsContainer>
 			{props.data.map(post => {
 				return (
 					<Post
@@ -16,7 +24,7 @@ function PostContainer(props) {
 					/>
 				);
 			})}
-		</div>
+		</PostsContainer>
 	);
 }
 

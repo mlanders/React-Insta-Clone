@@ -1,16 +1,16 @@
-.loginContainer {
+/* .loginContainer {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	margin: 10% auto;
 	box-sizing: border-box;
-}
-.login {
+} */
+/* .login {
 	display: flex;
 	flex-direction: column;
-}
-input.loginInput {
+} */
+/* input.loginInput {
 	border: 1px solid gray;
 	border-radius: 4px;
 	padding: 5px;
@@ -19,23 +19,12 @@ input.loginInput {
 }
 input.loginInput:focus {
 	outline: none;
-}
-.login button {
-	border-radius: 4px;
-	padding: 5px;
-	border: 1px solid gray;
-	width: 250px;
-}
-.login button:hover {
-	background-color: rgb(45, 93, 197);
-	color: white;
-	cursor: pointer;
-}
-.loginModal {
+} */
+/* .loginModal {
 	width: 300px;
 	padding: 20px;
-}
+} */
 
-.card-title {
+/* .card-title {
 	font-size: 40px;
-}
+} */

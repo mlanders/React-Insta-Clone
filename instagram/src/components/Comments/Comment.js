@@ -1,22 +1,42 @@
 import React from 'react';
 import moment from 'moment';
-
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
+
+const Comments = styled.div`
+	display: flex;
+	justify-content: flexstart;
+	align-items: flexstart;
+	flex-direction: column;
+	padding: 5px;
+`;
+const CommentName = styled.p`
+	font-weight: bold;
+`;
+const CommentText = styled.span`
+	font-weight: normal;
+`;
+
+const Time = styled.span`
+	font-size: 12px;
+	font-weight: 400;
+	color: rgb(155, 155, 155);
+`;
 
 function Comment(props) {
 	return (
-		<div className="comment">
-			<p className="commentName">
+		<Comments>
+			<CommentName>
 				{props.comment.username}:{' '}
-				<span className="commentText">{props.comment.text}</span>
-				<span className="time">
+				<CommentText>{props.comment.text}</CommentText>
+				<Time>
 					{' '}
 					{moment()
 						.startOf('day')
 						.fromNow()}
-				</span>
-			</p>
-		</div>
+				</Time>
+			</CommentName>
+		</Comments>
 	);
 }
 

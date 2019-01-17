@@ -2,13 +2,31 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Logo from './Logo';
 import Menu from './Menu';
-import './search.css';
+import styled from 'styled-components';
+
+// import './search.css';
+
+const TopBar = styled.div`
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 0 auto 30px;
+	border-bottom: 1px solid rgb(209, 209, 209);
+	padding: 15px 10%;
+	background-color: white;
+`;
+const SearchForm = styled.form`
+	width: 40%;
+	display: flex;
+`;
 
 function Search(props) {
 	return (
-		<div className="topBar">
+		<TopBar>
 			<Logo />
-			<form onChange={props.handleChange} onSubmit={props.searchPosts}>
+			<SearchForm
+				onChange={props.handleChange}
+				onSubmit={props.searchPosts}>
 				<input
 					type="text"
 					name="searchText"
@@ -16,9 +34,9 @@ function Search(props) {
 					className="form-control"
 					placeholder="Search"
 				/>
-			</form>
+			</SearchForm>
 			<Menu />
-		</div>
+		</TopBar>
 	);
 }
 

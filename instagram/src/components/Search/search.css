@@ -1,23 +1,25 @@
-.topBar {
+/* .topBar {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	margin: 0 auto 30px;
 	border-bottom: 1px solid rgb(209, 209, 209);
-	padding: 15px 10% ;
+	padding: 15px 10%;
 	background-color: white;
-}
+} */
 
-.Search input {
+/* .Search input {
 	max-width: 400px;
-}
+} */
 
-.Logo {
+/* .Logo {
 	font-size: 25px;
-}
-
-.fa-instagram {
+} */
+/* .Menu i {
+	margin: 0 5px;
+} */
+/* .fa-instagram {
 	border-right: 1px solid gray;
 	padding-right: 5px;
 	font-size: 30px;
-}
+} */
