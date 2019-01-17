@@ -22,7 +22,6 @@
 	flex-direction: column;
 	width: 500px;
 	margin: 0 auto;
-	background: transparent;
 }
 .postHeader {
 	display: flex;
