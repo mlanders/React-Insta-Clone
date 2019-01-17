@@ -1,0 +1,9 @@
+.login {
+	display: flex;
+	flex-direction: column;
+}
+.loginModal {
+	width: 300px;
+	margin: 25% auto;
+	padding: 20px;
+}
