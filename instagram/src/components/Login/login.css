@@ -1,9 +1,39 @@
+.loginContainer{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 25% auto;
+	box-sizing: border-box;
+
+
+}
 .login {
 	display: flex;
 	flex-direction: column;
 }
+input.loginInput, input.password{
+	border: 1px solid gray;
+	border-radius: 4px;
+	padding: 5px;
+	width: 250px;
+	margin: 0 0 5px 0;
+}
+.login button{
+	border-radius: 4px;
+	padding: 5px;
+	border: 1px solid gray;
+	width: 250px;
+}
+.login button:hover{
+	background-color: rgb(45, 93, 197);
+	color: white;
+	cursor: pointer;
+}
 .loginModal {
 	width: 300px;
-	margin: 25% auto;
 	padding: 20px;
+}
+.card-title{
+	font-size: 40px;
 }

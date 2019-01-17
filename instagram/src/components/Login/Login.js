@@ -45,25 +45,28 @@ class Login extends React.Component {
 
 	render() {
 		return (
-			<Card className="loginModal">
-				<form className="login">
-					<input
-						type="text"
-						placeholder="username"
-						name="username"
-						value={this.state.username}
-						onChange={this.handleChange}
-					/>
-					<input
-						type="text"
-						placeholder="password"
-						name="password"
-						value={this.state.password}
-						onChange={this.handleChange}
-					/>
-					<button onClick={this.handleSubmit}>Login</button>
-				</form>
-			</Card>
+			<div className='loginContainer'>
+				<CardTitle>Instagram</CardTitle>
+				<Card className="loginModal">
+					<form className="login">
+						<input className='loginInput'
+							type="text"
+							placeholder="username"
+							name="username"
+							value={this.state.username}
+							onChange={this.handleChange}
+						/>
+						<input className='loginInput'
+							type="password"
+							placeholder="password"
+							name="password"
+							value={this.state.password}
+							onChange={this.handleChange}
+						/>
+						<button onClick={this.handleSubmit}>Login</button>
+					</form>
+				</Card>
+			</div>
 		);
 	}
 }
