@@ -34,7 +34,7 @@ class PostPage extends React.Component {
 		this.setState({ filtered: newPosts });
 	};
 
-	clearSearch = e => {
+	clearSearch = () => {
 		this.setState(
 			{
 				searchText: '',

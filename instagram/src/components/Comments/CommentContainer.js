@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Comment from './Comment';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { Modal, ListGroup, ListGroupItem } from 'reactstrap';
 // import './comment.css';
 
 const CommentForm = styled.form`
@@ -32,9 +33,14 @@ class CommentContainer extends Component {
 			comments: props.post.comments,
 			comment: '',
 			user: '',
+			modal: false,
 		};
 	}
-
+	toggle = () => {
+		this.setState({
+			modal: !this.state.modal,
+		});
+	};
 	loadStorage = () => {
 		let username = localStorage.getItem('username');
 		username = JSON.parse(username) || [];
@@ -82,8 +88,27 @@ class CommentContainer extends Component {
 						onChange={this.handleChange}
 						placeholder="Add a comment"
 					/>
-					<Elipsis>&#8230;</Elipsis>
+					<Elipsis onClick={this.toggle}>&#8230;</Elipsis>
 				</CommentForm>
+
+				<Modal
+					isOpen={this.state.modal}
+					toggle={this.toggle}
+					className={this.props.className}>
+					<ListGroup>
+						<ListGroupItem color="danger">
+							Report inappropriate
+						</ListGroupItem>
+						<ListGroupItem color="danger">Unfollow</ListGroupItem>
+						<ListGroupItem>Go to post</ListGroupItem>
+						<ListGroupItem>Embed</ListGroupItem>
+						<ListGroupItem>Share</ListGroupItem>
+						<ListGroupItem>Copy Link</ListGroupItem>
+						<ListGroupItem onClick={this.toggle}>
+							Cancel
+						</ListGroupItem>
+					</ListGroup>
+				</Modal>
 			</div>
 		);
 	}
