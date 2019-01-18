@@ -52,7 +52,7 @@ function Search(props) {
 					onClick={props.clearSearch}
 				/>
 			</SearchForm>
-			<Menu />
+			<Menu handleLogout={props.handleLogout} />
 		</TopBar>
 	);
 }

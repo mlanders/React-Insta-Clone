@@ -11,8 +11,20 @@ class PostPage extends React.Component {
 			filtered: [],
 			searchText: '',
 			Display: false,
+			username: '',
+			password: '',
 		};
 	}
+
+	handleLogout = () => {
+		if (this.state.username !== '' && this.state.password !== '') {
+			this.setState(
+				{ username: '', password: '' },
+				this.updateLocalStorage()
+				// window.location.reload()
+			);
+		}
+	};
 
 	handleChange = e => {
 		console.log(e.target.value);
@@ -44,11 +56,30 @@ class PostPage extends React.Component {
 		);
 	};
 
+	updateLocalStorage = () => {
+		localStorage.setItem('username', JSON.stringify(this.state.username));
+		localStorage.setItem('password', JSON.stringify(this.state.password));
+	};
+
+	loadStorage = () => {
+		let username = localStorage.getItem('username');
+		let password = localStorage.getItem('password');
+		username = JSON.parse(username) || [];
+		password = JSON.parse(password) || [];
+		this.setState({
+			username: username,
+			password: password,
+		});
+	};
+
 	componentDidMount = () => {
 		// console.log('CDM running');
-		this.setState({
-			data: data,
-		});
+		this.setState(
+			{
+				data: data,
+			},
+			this.loadStorage()
+		);
 	};
 	render() {
 		// console.log('render running');
@@ -59,6 +90,7 @@ class PostPage extends React.Component {
 					searchPosts={this.searchPosts}
 					clearSearch={this.clearSearch}
 					display={this.state.Display}
+					handleLogout={this.handleLogout}
 				/>
 				<PostContainer
 					data={
