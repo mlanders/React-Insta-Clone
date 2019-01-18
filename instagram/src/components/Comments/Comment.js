@@ -10,7 +10,7 @@ const Comments = styled.div`
 	flex-direction: column;
 	padding: 5px;
 `;
-const CommentName = styled.p`
+const CommentName = styled.div`
 	font-weight: bold;
 `;
 const CommentText = styled.span`

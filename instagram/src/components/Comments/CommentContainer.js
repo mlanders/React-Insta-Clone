@@ -47,6 +47,10 @@ class CommentContainer extends Component {
 		console.log(username);
 		this.setState({ user: username });
 	};
+	updateLocalStorage = () => {
+		localStorage.setItem('user', JSON.stringify(this.state.user));
+		localStorage.setItem('comment', JSON.stringify(this.state.comment));
+	};
 
 	handleChange = e => {
 		this.setState(
@@ -67,6 +71,7 @@ class CommentContainer extends Component {
 					username: this.state.user,
 					text: this.state.comment,
 				},
+				// this.updateLocalStorage(),
 			],
 			comment: '',
 		});
